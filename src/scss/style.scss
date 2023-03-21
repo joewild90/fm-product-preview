@@ -53,6 +53,8 @@
 
     --px-button: 1.5rem;
     --py-button: .75rem;
+    --px-button-sm: 1.5rem;
+    --py-button-sm: 1rem;
 
 }
 
@@ -127,8 +129,11 @@ h1 {
     background-color: var(--cyan-dark);
     border-color: var(--cyan-dark) ;
     &:hover, &:focus-visible, &:active {
-        background-color: hsla(var(--cyan-dark-hsl), 0.5);
-        border-color: hsla(var(--cyan-dark-hsl), 0.5);
+        background-color: darken(hsl(158, 36%, 37%), 15%);
+        border-color: darken(hsl(158, 36%, 37%), 15%);
+    }
+    @media screen and (min-width: 576px) {
+        padding: var(--py-button-sm) var(--px-button-sm);
     }
 }
 
@@ -195,10 +200,6 @@ h1 {
         width: 50%; 
     }
 
-    @media screen and (min-width: 768px) {
-        padding: var(--p-card-md);
-        
-    }
 }
 
 

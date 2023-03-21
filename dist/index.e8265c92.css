@@ -7216,6 +7216,8 @@ progress {
   --p-card-md: 3rem;
   --px-button: 1.5rem;
   --py-button: .75rem;
+  --px-button-sm: 1.5rem;
+  --py-button-sm: 1rem;
 }
 
 @font-face {
@@ -7296,8 +7298,14 @@ h1, .h1 {
 }
 
 .btn-primary:hover, .btn-primary:focus-visible, .btn-primary:active {
-  background-color: hsla(var(--cyan-dark-hsl), .5);
-  border-color: hsla(var(--cyan-dark-hsl), .5);
+  background-color: #244c3d;
+  border-color: #244c3d;
+}
+
+@media screen and (min-width: 576px) {
+  .btn-primary {
+    padding: var(--py-button-sm) var(--px-button-sm);
+  }
 }
 
 .img-fluid {
@@ -7376,12 +7384,6 @@ h1, .h1 {
 @media screen and (min-width: 650px) {
   .card-product__body {
     width: 50%;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .card-product__body {
-    padding: var(--p-card-md);
   }
 }
 
