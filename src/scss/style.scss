@@ -1,0 +1,252 @@
+// Custom.scss
+// Option B: Include parts of Bootstrap
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "../../node_modules/bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import "../../node_modules/bootstrap/scss/variables";
+
+// 4. Include any default map overrides here
+
+// 5. Include remainder of required parts
+@import "../../node_modules/bootstrap/scss/maps";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/root";
+
+// 6. Optionally include any other parts as needed
+@import "../../node_modules/bootstrap/scss/utilities";
+@import "../../node_modules/bootstrap/scss/reboot";
+@import "../../node_modules/bootstrap/scss/containers";
+@import "../../node_modules/bootstrap/scss/grid";
+@import "../../node_modules/bootstrap/scss/helpers";
+@import "../../node_modules/bootstrap/scss/type";
+@import "../../node_modules/bootstrap/scss/buttons";
+
+// 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+@import "../../node_modules/bootstrap/scss/utilities/api";
+
+// 8. Add additional custom code here
+
+:root {
+    --cyan-dark: hsl(158, 36%, 37%);
+    --cyan-dark-hsl: 158, 36%, 37%;
+    --cream: hsl(30, 38%, 92%);
+    --cream-hsl: 30, 38%, 92%;
+    
+    --blue-dark: hsl(212, 21%, 14%);
+    --blue-gray: hsl(228, 12%, 48%);
+    --white: hsl(0, 0%, 100%);
+
+    --fs-text-xs: .75rem;
+    --fs-text-sm: .875rem;
+    --fs-h1: 2rem;
+    --fs-body: 1.125rem;
+    --fs-link: 1.125rem;
+    --fs-button: 1.125rem;
+
+    --p-card: 1.5rem;
+    --p-card-sm: 2.5rem;
+    --p-card-md: 3rem;
+
+    --px-button: 1.5rem;
+    --py-button: .75rem;
+
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url(../fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url(../fonts/Montserrat/Montserrat-Italic-VariableFont_wght.ttf);
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Fraunces';
+    src: url(../fonts/Fraunces/Fraunces-VariableFont_SOFT\,WONK\,opsz\,wght.ttf);
+    font-style:normal;
+}
+@font-face {
+    font-family: 'Fraunces';
+    src: url(../fonts/Fraunces/Fraunces-Italic-VariableFont_SOFT\,WONK\,opsz\,wght.ttf);
+    font-style: italic;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-smooth: antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: antialiased;
+}
+body {
+    font-family: "Montserrat";
+    font-size: var(--fs-text-sm);
+    font-weight: 500;
+
+}
+p {
+    margin: 0;
+}
+
+h1 {
+    font-family: 'Fraunces';
+    font-size: var(--fs-h1);
+    font-weight: 700;
+    color: var(--blue-dark);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+
+.text {
+    margin-bottom: .5rem;
+    color: var(--blue-gray);
+    line-height: 1.5;
+}
+.overline {
+    font-size: var(--fs-text-xs);
+    font-weight: 500;
+    color: var(--blue-gray);
+    letter-spacing: .4rem;
+    margin-bottom: .5rem;
+}
+
+.btn {
+    color: var(--white);
+    font-weight: 700;
+    padding: var(--py-button) var(--px-button);
+    border-radius: .75rem;
+}
+
+.btn-primary {
+    background-color: var(--cyan-dark);
+    border-color: var(--cyan-dark) ;
+    &:hover, &:focus-visible, &:active {
+        background-color: hsla(var(--cyan-dark-hsl), 0.5);
+        border-color: hsla(var(--cyan-dark-hsl), 0.5);
+    }
+}
+
+.img-fluid {
+    max-width: 100%;
+}
+
+
+
+.page {
+    height: 100vh;
+    width: 100%;
+}
+
+.page__content {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--cream);
+}
+
+.btn--has-icon-left {
+    svg { margin-right: .5rem; }
+}
+
+.card-product {
+    width: 90%;
+    display: flex;
+    flex-flow: column nowrap;
+    border-radius: 1.25rem;
+    background-color: var(--white);
+    @media screen and (min-width: 450px) {
+        max-width: 450px;
+    }
+    @media screen and (min-width: 576px) {
+        width: 100%;
+        max-width: 700px;
+        flex-flow: row;
+    }
+}
+.card-product__header {
+    @media screen and (min-width: 576px) {
+        width: 40%;
+        flex: none;
+    }
+    @media screen and (min-width: 650px) {
+        width: 50%; 
+    }
+}
+.card-product__body {
+    padding: var(--p-card);
+    @media screen and (min-width: 450px) {
+        display: flex;
+        align-items: center;
+        padding: var(--p-card-sm);
+    }
+    @media screen and (min-width: 576px) {
+        width: 60%;
+        flex: none;  
+    }
+    @media screen and (min-width: 650px) {
+        width: 50%; 
+    }
+
+    @media screen and (min-width: 768px) {
+        padding: var(--p-card-md);
+        
+    }
+}
+
+
+
+.card-product__image {
+    width: 100%;
+    max-height: 12.5rem;
+    object-fit: cover;
+    object-position: 0 45%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    @media screen and (min-width: 576px) {
+        height: 100%;
+        max-height: 500px;
+        object-position: 0;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 10px;
+    }
+}
+
+.card-product__price-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+}
+
+.card-product__price-reduced {
+    font-family: 'Fraunces', sans-serif;
+    font-size: 2.1875rem;
+    font-weight: 700;
+    color: var(--cyan-dark);
+}
+
+.card-product__price-original {
+    color: var(--blue-gray);
+}
+.card-product__button {
+    width: 100%;
+}
+
+
+
+@media screen and (min-width: 576px) {
+    
+}
+@media screen and (min-width: 1440px) {
+    
+}
+
